@@ -1,6 +1,5 @@
 local wk		= require("which-key")
 local lspconfig = require'lspconfig'
-local dap       = require'dap'
 local null_ls	= require("null-ls")
 
 --Tree sitter config

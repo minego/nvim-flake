@@ -1,6 +1,6 @@
 local wk		= require("which-key")
 local dap		= require('dap')
-local dapui		= require('dap-ui')
+local dapui		= require('dapui')
 local telescope	= require('telescope')
 
 -- DAP bindings to try to match other debuggers
@@ -80,7 +80,7 @@ wk.register({
 
 
 		r = { function() require'dap'.repl.open()								end, "Open REPL"				},
-		u = { function() require("dapui").toggle()								end, "Toggle UI"				},
+		u = { function() require'dapui'.toggle()								end, "Toggle UI"				},
 		X = { function() require'dap'.clear_breakpoints()						end, "Clear Breakpoint"			},
 		C = { function() 
 				require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))()

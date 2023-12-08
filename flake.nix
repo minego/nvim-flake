@@ -226,7 +226,7 @@
 
 				dap = {
 					enable						= true;
-					go							= true;
+					go							= false;
 					clang						= true;
 					variableDebugPreviews		= true;
 				};
