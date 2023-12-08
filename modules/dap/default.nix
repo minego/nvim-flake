@@ -1,6 +1,6 @@
 {pkgs, config, lib, ...}:
 {
 	imports = [
-		./lsp.nix
+		./dap.nix
 	];
 }

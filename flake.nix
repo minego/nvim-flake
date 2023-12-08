@@ -35,9 +35,13 @@
 		nvim-lsp-smag				= { url = "github:weilbith/nvim-lsp-smag";						flake = false; };
 		lsp_signature				= { url = "github:ray-x/lsp_signature.nvim";					flake = false; };
 		null-ls						= { url = "github:jose-elias-alvarez/null-ls.nvim";				flake = false; };
-
 		vim-nix						= { url = "github:LnL7/vim-nix";								flake = false; };
+
 		nvim-dap					= { url = "github:mfussenegger/nvim-dap";						flake = false; };
+		nvim-dap-ui					= { url = "github:rcarriga/nvim-dap-ui";						flake = false; };
+		nvim-dap-virtual-text		= { url = "github:theHamsta/nvim-dap-virtual-text";				flake = false; };
+		nvim-dap-go					= { url = "github:leoluz/nvim-dap-go";							flake = false; };
+
 		nvim-telescope				= { url = "github:nvim-telescope/telescope.nvim";				flake = false; };
 		nvim-telescope-emoji		= { url = "github:xiyaowong/telescope-emoji.nvim";				flake = false; };
 		nvim-telescope-dap			= { url = "github:nvim-telescope/telescope-dap.nvim";			flake = false; };
@@ -47,7 +51,6 @@
 		nvim-tree-lua				= { url = "github:kyazdani42/nvim-tree.lua";					flake = false; };
 		nvim-lightbulb				= { url = "github:kosayoda/nvim-lightbulb";						flake = false; };
 		editorconfig-vim			= { url = "github:editorconfig/editorconfig-vim";				flake = false; };
-		nvim-dap-virtual-text		= { url = "github:theHamsta/nvim-dap-virtual-text";				flake = false; };
 		vim-cursorword				= { url = "github:itchyny/vim-cursorword";						flake = false; };
 		vim-test					= { url = "github:vim-test/vim-test";							flake = false; };
 		nvim-which-key				= { url = "github:folke/which-key.nvim";						flake = false; };
@@ -66,12 +69,10 @@
 
 # My additions
 
-		nvim-dap-ui					= { url = "github:rcarriga/nvim-dap-ui";						flake = false; };
 
 		neotest						= { url = "github:nvim-neotest/neotest";						flake = false; };
 		neotest-go					= { url = "github:nvim-neotest/neotest-go";						flake = false; };
 
-		nvim-dap-go					= { url = "github:leoluz/nvim-dap-go";							flake = false; };
 		goimpl						= { url = "github:edolphin-ydf/goimpl.nvim";					flake = false; };
 		vim-go-coverage				= { url = "github:kyoh86/vim-go-coverage";						flake = false; };
 
@@ -103,10 +104,14 @@
 			"nvim-lsp-smag"
 			"lsp_signature"
 			"null-ls"
+			"vim-nix"
+
+			"nvim-dap"
+			"nvim-dap-ui"
+			"nvim-dap-virtual-text"
+			"nvim-dap-go"
 
 			"completion-nvim"
-			"vim-nix"
-			"nvim-dap"
 			"nvim-telescope"
 			"nvim-telescope-dap"
 			"nvim-telescope-emoji"
@@ -119,7 +124,6 @@
 			"nvim-treesitter-textobjects"
 			"editorconfig-vim"
 			"indent-blankline-nvim"
-			"nvim-dap-virtual-text"
 			"vim-cursorword"
 			"vim-test"
 			"nvim-which-key"
@@ -218,6 +222,12 @@
 					json						= true;
 					clang						= true;
 					lightbulb					= true;
+				};
+
+				dap = {
+					enable						= true;
+					go							= true;
+					clang						= true;
 					variableDebugPreviews		= true;
 				};
 				fuzzyfind.telescope.enable		= true;
