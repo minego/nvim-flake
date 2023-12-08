@@ -261,6 +261,11 @@
 
 		packages = lib.withDefaultSystems (sys: rec {
 			neovim-minego = mkNeoVimPkg allPkgs."${sys}";
+			default = neovim-minego;
 		});
+
+		overlay = final: prev: {
+			neovim = self.packages.${prev.system}.default;
+		};
 	};
 }
