@@ -221,13 +221,16 @@
 					html						= true;
 					json						= true;
 					clang						= true;
+
 					lightbulb					= true;
+					codespell					= true;
 				};
 
 				dap = {
 					enable						= true;
 					go							= false;
 					clang						= true;
+
 					variableDebugPreviews		= true;
 				};
 				fuzzyfind.telescope.enable		= true;

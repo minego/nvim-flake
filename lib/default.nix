@@ -43,6 +43,9 @@ rec {
 			pkgs.wrapNeovim config.vim.neovimPackage {
 				viAlias		= true;
 				vimAlias	= true;
+				withPython3	= false;
+				withRuby	= false;
+				withNodeJs	= false;
 
 				configure = {
 					customRC	= vim.configRC;
