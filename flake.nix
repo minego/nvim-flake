@@ -175,7 +175,8 @@
 
 				viAlias							= true;
 				vimAlias						= true;
-				useSystemClipboard				= true;
+				useSystemClipboard				= false;
+				useOsc52Clipboard				= true;
 				mapLeaderSpace					= false;
 
 				terminal = {

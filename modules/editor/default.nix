@@ -5,22 +5,24 @@ with builtins;
 let
     cfg = config.vim.editor;
 in {
-    options.vim.editor = {
-        indentGuide             = mkEnableOption "Enable indent guides";
-        underlineCurrentWord    = mkEnableOption "Underline the word under the cursor";
+    options.vim = {
+		editor = {
+			indentGuide             = mkEnableOption "Enable indent guides";
+			underlineCurrentWord    = mkEnableOption "Underline the word under the cursor";
 
-        colourPreview = mkOption {
-            description         = "Enable colour previews";
-            type                = types.bool;
-            default             = true;
-        };
+			colourPreview = mkOption {
+				description         = "Enable colour previews";
+				type                = types.bool;
+				default             = true;
+			};
+		};
 
-        useSystemClipboard = mkOption {
-            default         = true;
-            description     = "Make use of the clipboard for default yank and paste operations. Don't use * and +";
-            type            = types.bool;
-        };
-    };
+		useOsc52Clipboard = mkOption {
+			default         = true;
+			description     = "Make use of the clipboard for default yank and paste operations. Don't use * and +";
+			type            = types.bool;
+		};
+	};
 
     config = {
         vim.startPlugins = with pkgs.neovimPlugins; [
@@ -50,7 +52,7 @@ in {
                 },
             }, { prefix = "<leader>" })
 
-			${if cfg.useSystemClipboard then ''
+			${if config.vim.useOsc52Clipboard then ''
 				local osc52 = require('osc52')
 
 				osc52.setup({

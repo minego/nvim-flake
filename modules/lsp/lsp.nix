@@ -215,7 +215,7 @@ in {
             capabilities.offsetEncoding = { "utf-16" }
 
             lspconfig.clangd.setup{
-                cmd             = {'${pkgs.clang-tools}/bin/clangd', '--background-index'};
+                cmd             = {'${pkgs.clang-tools}/bin/clangd', '--background-index', '--limit-results=0'};
                 capabilities    = capabilities,
                 filetypes       = { "c", "cpp", "objc", "objcpp", "m" };
             }
