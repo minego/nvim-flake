@@ -7,6 +7,7 @@
 		./dashboard
 		./statusline
 		./lsp
+		./dap
 		./fuzzyfind
 		./git
 		./formatting
