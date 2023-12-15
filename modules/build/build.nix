@@ -14,9 +14,14 @@ in {
     config = mkIf cfg.cmake.enable {
         vim.startPlugins = with pkgs.neovimPlugins; [ 
 			cmake-tools
+			nvim-notify
 		];
 
         vim.luaConfigRC = ''
+			require("notify").setup({
+				background_colour = "#000000",
+			})
+
             require("cmake-tools").setup {
             	cmake_regenerate_on_save			= true,
             
@@ -33,7 +38,7 @@ in {
             		name							= "c",
             		type							= "lldb",
             		request							= "launch",
-            		stopOnEntry						= true,
+            		stopOnEntry						= false,
             		runInTerminal					= true,
             		console							= "integratedTerminal",
             	},

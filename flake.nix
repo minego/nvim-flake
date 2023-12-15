@@ -68,6 +68,7 @@
 		gitlab						= { url = "./flakes/gitlab-nvim-flake";							flake = true;  };
 
 		cmake-tools					= { url = "github:Civitasv/cmake-tools.nvim";					flake = false; };
+		nvim-notify					= { url = "github:rcarriga/nvim-notify";						flake = false; };
 
 
 # My additions - These still need to be wired up...
@@ -136,6 +137,7 @@
 			"diffview-nvim"
 
 			"cmake-tools"
+			"nvim-notify"
 		];
 
 		externalPackages = top: last: {

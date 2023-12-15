@@ -7,8 +7,15 @@ local telescope	= require('telescope')
 
 -- <F5> Start/Continue
 local function f5()
+	local cmake = require('cmake-tools')
+	local dap = require('dap')
+
 	require'dap.ext.vscode'.load_launchjs()
-	require'dap'.continue()
+	if dap.session() == nil and cmake.is_cmake_project() then
+		cmake.debug({})
+	else
+		dap.continue()
+	end
 end
 
 -- <S-F5> Terminate

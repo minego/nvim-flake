@@ -139,19 +139,65 @@ wk.setup {}
 -- Open a terminal with ^Z
 wk.register({ ["<c-z>"] = { '<cmd>botright vsplit | terminal<CR><C-L>', "Open a Terminal" } }, { mode = "n", silent = true })
 
+local domake = function(target)
+	cmake = require("cmake-tools")
+
+	if cmake.is_cmake_project() then
+		if target == "clean" then
+			vim.cmd([[ CMakeClean ]])
+		elseif target == "all" then
+			vim.cmd([[ CMakeBuild ]])
+		elseif target == "clean all" then
+			vim.cmd([[ CMakeBuild! ]])
+		elseif target == "all install" then
+			vim.cmd([[ CMakeInstall ]])
+		elseif target == "clean all install" then
+			vim.cmd([[ CMakeClean ]])
+			vim.cmd([[ CMakeInstall ]])
+		elseif target == "all test" then
+			vim.cmd([[ CMakeRunTest ]])
+		elseif target == "clean all test" then
+			vim.cmd([[ CMakeClean ]])
+			vim.cmd([[ CMakeRunTest ]])
+		elseif target == "all debug" then
+			vim.cmd([[ CMakeDebug ]])
+		elseif target == "clean all debug" then
+			vim.cmd([[ CMakeClean ]])
+			vim.cmd([[ CMakeDebug ]])
+		elseif target == "all run" then
+			vim.cmd([[ CMakeRun ]])
+		elseif target == "clean all run" then
+			vim.cmd([[ CMakeClean ]])
+			vim.cmd([[ CMakeRun ]])
+		else
+		end
+	else
+		vim.cmd("make " .. target)
+	end
+end
+
 -- make
 wk.register({
 	["<leader>m"] = {
 		name	= "make",
 
-		c		= { "<cmd>make clean<CR>",				"make clean"			},
-		C		= { "<cmd>make clean<CR>",				"make clean"			},
-		a		= { "<cmd>make all<CR>",				"make all"				},
-		A		= { "<cmd>make clean all<CR>",			"make clean all"		},
-		i		= { "<cmd>make all install<CR>",		"make all install"		},
-		I		= { "<cmd>make clean all install<CR>",	"make clean all install"},
-		t		= { "<cmd>make all test<CR>",			"make all test"			},
-		T		= { "<cmd>make clean all test<CR>",		"make clean all test"	},
+		c		= { function() domake("clean")				end, "make clean"				},
+		C		= { function() domake("clean")				end, "make clean"				},
+
+		a		= { function() domake("all")				end, "make all"					},
+		A		= { function() domake("clean all")			end, "make clean all"			},
+
+		i		= { function() domake("all install")		end, "make all install"			},
+		I		= { function() domake("clean all install")	end, "make clean all install"	},
+
+		t		= { function() domake("all test")			end, "make all test"			},
+		T		= { function() domake("clean all test")		end, "make clean all test"		},
+
+		d		= { function() domake("all debug")			end, "make all debug"			},
+		D		= { function() domake("clean all debug")	end, "make clean all debug"		},
+
+		r		= { function() domake("all run")			end, "make all run"				},
+		r		= { function() domake("clean all run")		end, "make clean all run"		},
 	},
 },  { mode = "n" })
 
