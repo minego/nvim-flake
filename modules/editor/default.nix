@@ -51,25 +51,25 @@ in {
                     v       = { "Split Vertical" },
                 },
             }, { prefix = "<leader>" })
-
-			${if config.vim.useOsc52Clipboard then ''
-				local osc52 = require('osc52')
-
-				osc52.setup({
-					max_length = 0,      -- Maximum length of selection (0 for no limit)
-					silent     = true,   -- Disable message on successful copy
-					trim       = true,  -- Trim surrounding whitespaces before copy
-				})
-
-				function copy()
-					if vim.v.event.operator == 'y' and vim.v.event.regname == '+' then
-						require('osc52').copy_register('+')
-					end
-				end
-
-				vim.api.nvim_create_autocmd('TextYankPost', {callback = copy})
-				'' else ""}
-
+            
+            ${if config.vim.useOsc52Clipboard then ''
+            	local osc52 = require('osc52')
+            
+            	osc52.setup({
+            		max_length = 0,      -- Maximum length of selection (0 for no limit)
+            		silent     = true,   -- Disable message on successful copy
+            		trim       = true,  -- Trim surrounding whitespaces before copy
+            	})
+            
+            	function copy()
+            		if vim.v.event.operator == 'y' and vim.v.event.regname == '+' then
+            			require('osc52').copy_register('+')
+            		end
+            	end
+            
+            	vim.api.nvim_create_autocmd('TextYankPost', {callback = copy})
+            	'' else ""}
+            
             '';
     };
 }

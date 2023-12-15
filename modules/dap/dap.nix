@@ -75,7 +75,7 @@ in {
             ${if cfg.clang then ''
                 dap.adapters.lldb = {
                     type    = 'executable',
-                    command = 'lldb-vscode',
+                    command = '${pkgs.lldb}/bin/lldb-vscode',
                     name    = "lldb"
                 }
                 dap.adapters.c   = dap.adapters.lldb

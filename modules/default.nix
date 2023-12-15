@@ -5,6 +5,7 @@
 		./basic
 		./themes
 		./dashboard
+		./build
 		./statusline
 		./lsp
 		./dap

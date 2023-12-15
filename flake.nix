@@ -65,11 +65,12 @@
 		diffview-nvim				= { url = "github:sindrets/diffview.nvim";						flake = false; };
 
 		# Build as a flake to build the go server as well
-		gitlab						= { url = "./flakes/gitlab-nvim-flake";							flake = true; };
+		gitlab						= { url = "./flakes/gitlab-nvim-flake";							flake = true;  };
 
-# My additions
+		cmake-tools					= { url = "github:Civitasv/cmake-tools.nvim";					flake = false; };
 
 
+# My additions - These still need to be wired up...
 		neotest						= { url = "github:nvim-neotest/neotest";						flake = false; };
 		neotest-go					= { url = "github:nvim-neotest/neotest-go";						flake = false; };
 
@@ -133,6 +134,8 @@
 			"nui-nvim"
 			"dressing-nvim"
 			"diffview-nvim"
+
+			"cmake-tools"
 		];
 
 		externalPackages = top: last: {
@@ -202,6 +205,12 @@
 				statusline = {
 					lightline.enable			= false;
 					lualine.enable				= true;
+				};
+
+				buildtools = {
+					cmake = {
+						enable					= true;
+					};
 				};
 
 				lsp = {

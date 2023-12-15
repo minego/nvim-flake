@@ -216,8 +216,15 @@ in {
 
             lspconfig.clangd.setup{
                 cmd             = {'${pkgs.clang-tools}/bin/clangd', '--background-index', '--limit-results=0'};
-                capabilities    = capabilities,
+                capabilities    = capabilities;
                 filetypes       = { "c", "cpp", "objc", "objcpp", "m" };
+
+                on_new_config	= function(new_config, new_cwd)
+                	local status, cmake = pcall(require, "cmake-tools")
+                	if status then
+                		cmake.clangd_on_new_config(new_config)
+                	end
+                end,
             }
             '' else ""}
 
