@@ -28,8 +28,8 @@ in {
             	cmake_generate_options				= { "-G", "Ninja", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
             	cmake_build_options					= {},
             
-            	cmake_build_directory				= "build/''${variant:buildType}",
-            	-- cmake_build_directory				= "build/",
+            	-- cmake_build_directory				= "build/''${variant:buildType}",
+            	cmake_build_directory				= "build",
             
             	cmake_soft_link_compile_commands	= false,
             	cmake_compile_commands_from_lsp		= true,
