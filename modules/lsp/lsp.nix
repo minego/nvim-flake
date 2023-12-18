@@ -9,6 +9,7 @@ in {
         enable      = mkEnableOption "LSP support";
 
         bash        = mkEnableOption "Bash Language Support";
+        cmake       = mkEnableOption "CMake Language Support";
         go          = mkEnableOption "Go Language Support";
         nix         = mkEnableOption "NIX Language Support";
         python      = mkEnableOption "Python Support";
@@ -114,6 +115,15 @@ in {
                 cmd = {
                     "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server",
                     "start"
+                }
+            }
+            '' else ""}
+
+            ${if cfg.cmake then ''
+            lspconfig.neocmake.setup {
+                cmd = {
+                    "${pkgs.neocmakelsp}/bin/neocmakelsp",
+                    "--stdio"
                 }
             }
             '' else ""}
