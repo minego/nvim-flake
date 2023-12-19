@@ -229,7 +229,7 @@
 					typescript					= true;
 					vimscript					= true;
 					yaml						= true;
-					docker						= true;
+					docker						= false;
 					tex							= true;
 					css							= true;
 					html						= true;

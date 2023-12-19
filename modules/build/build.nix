@@ -72,6 +72,8 @@ in {
             			start_insert_in_launch_task	= true,
             			start_insert_in_other_tasks	= false,
             			focus_on_launch_terminal	= true,
+
+						do_not_add_newline			= true,
             		},
             	},
             	cmake_notifications = {
