@@ -23,7 +23,7 @@ in {
 			})
 
             require("cmake-tools").setup {
-            	cmake_regenerate_on_save			= true,
+            	cmake_regenerate_on_save			= false,
             
             	cmake_generate_options				= { "-G", "Ninja", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
             	cmake_build_options					= {},
