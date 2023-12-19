@@ -219,7 +219,7 @@
 				lsp = {
 					enable						= true;
 					bash						= true;
-					cmake						= true;
+					cmake						= false; # Turning off for now, it doesn't run on mac
 					go							= true;
 					nix							= true;
 					python						= true;
