@@ -48,6 +48,8 @@ in {
             		opts = {
             			show						= "always",
             			-- show						= "only_on_error",
+						auto_close_when_success		= true,
+
             			position					= "bot",
             			size						= 40,
             			encoding					= "utf-8",

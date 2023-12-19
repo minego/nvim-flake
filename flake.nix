@@ -67,8 +67,8 @@
 		# Build as a flake to build the go server as well
 		gitlab						= { url = "./flakes/gitlab-nvim-flake";							flake = true;  };
 
-		# cmake-tools					= { url = "github:Civitasv/cmake-tools.nvim";					flake = false; };
-		cmake-tools					= { url = "github:minego/cmake-tools.nvim/AlmostRun";			flake = false; };
+		cmake-tools					= { url = "github:Civitasv/cmake-tools.nvim";					flake = false; };
+		# cmake-tools					= { url = "github:minego/cmake-tools.nvim/AlmostRun";			flake = false; };
 		nvim-notify					= { url = "github:rcarriga/nvim-notify";						flake = false; };
 
 
