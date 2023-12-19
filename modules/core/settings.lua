@@ -197,7 +197,7 @@ wk.register({
 		D		= { function() domake("clean all debug")	end, "make clean all debug"		},
 
 		r		= { function() domake("all run")			end, "make all run"				},
-		r		= { function() domake("clean all run")		end, "make clean all run"		},
+		R		= { function() domake("clean all run")		end, "make clean all run"		},
 	},
 },  { mode = "n" })
 
