@@ -176,11 +176,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-GtEuoGafPE8iK5q/4aB/Z1mLPrN4czMlacR/Rd8B6yA=",
-        "path": "/nix/store/s58kk0k3bs3s0s2a6hwlvlzns561j24b-source/flakes/gitlab-nvim-flake",
+        "path": "/nix/store/vyp3mlvj00ji7dzfzqq64y22xan27fyp-source/flakes/gitlab-nvim-flake",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/s58kk0k3bs3s0s2a6hwlvlzns561j24b-source/flakes/gitlab-nvim-flake",
+        "path": "/nix/store/vyp3mlvj00ji7dzfzqq64y22xan27fyp-source/flakes/gitlab-nvim-flake",
         "type": "path"
       }
     },
